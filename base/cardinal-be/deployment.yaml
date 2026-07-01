@@ -32,3 +32,5 @@ spec:
                 secretKeyRef:
                   name: mysql-secret
                   key: password
+            - name: SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT
+              value: org.hibernate.dialect.MySQLDialect
