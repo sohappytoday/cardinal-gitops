@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cardinal-be
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cardinal-be
+  template:
+    metadata:
+      labels:
+        app: cardinal-be
+    spec:
+      imagePullSecrets:
+        - name: ghcr-secret
+      containers:
+        - name: cardinal-be
+          image: ghcr.io/sohappytoday/likelion14th-blog:49cd534
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysql:3306/cardinal-staging-test
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: username
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-secret
+                  key: password
