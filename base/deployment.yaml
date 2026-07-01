@@ -12,12 +12,10 @@ spec:
       labels:
         app: web
     spec:
-      template:
-        spec:
-          imagePullSecrets:            
-            - name: ghcr-secret
-          containers:
-            - name: web
-              image: ghcr.io/sohappytoday/likelion14th-blog:2fa87f6
-              ports:
-            - containerPort: 8080  
+      imagePullSecrets:
+        - name: ghcr-secret
+      containers:
+        - name: web
+          image: ghcr.io/sohappytoday/likelion14th-blog:2fa87f6
+          ports:
+            - containerPort: 8080
