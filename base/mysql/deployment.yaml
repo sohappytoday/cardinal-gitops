@@ -19,6 +19,13 @@ spec:
           image: mysql:8.0
           ports:
             - containerPort: 3306
+          resources:
+            requests:
+              memory: "384Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "1"
           env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
