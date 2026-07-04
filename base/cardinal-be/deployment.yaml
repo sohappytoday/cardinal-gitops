@@ -18,7 +18,7 @@ spec:
         - name: ghcr-secret
       containers:
         - name: cardinal-be
-          image: ghcr.io/sohappytoday/cardinal-be:8475c9e
+          image: ghcr.io/sohappytoday/cardinal-be:b15e48a
           ports:
             - containerPort: 8080
           resources:
