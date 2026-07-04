@@ -18,7 +18,7 @@ spec:
         - name: ghcr-secret
       containers:
         - name: cardinal-be
-          image: ghcr.io/sohappytoday/likelion14th-blog:1553fc1
+          image: ghcr.io/sohappytoday/cardinal-be:8475c9e
           ports:
             - containerPort: 8080
           resources:
@@ -30,7 +30,7 @@ spec:
               cpu: "1"
           env:
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:mysql://mysql:3306/cardinal-staging-test
+              value: jdbc:mysql://mysql:3306/cardinal
             - name: SPRING_DATASOURCE_USERNAME
               valueFrom:
                 secretKeyRef:
