@@ -6,3 +6,6 @@ resources:
 replicas:
   - name: cardinal-be
     count: 2
+images:
+  - name: ghcr.io/sohappytoday/cardinal-be
+    newTag: 8475c9e
